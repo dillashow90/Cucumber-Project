@@ -1,4 +1,4 @@
-package com.app.models;
+package src.test.java.com.app.models;
 
 public class Contact {
 

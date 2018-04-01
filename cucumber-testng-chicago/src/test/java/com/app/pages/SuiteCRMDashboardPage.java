@@ -53,13 +53,19 @@ public class SuiteCRMDashboardPage {
 	@FindBy(linkText = "Create Contact")
 	public WebElement createContactOption;
 	
+	@FindBy (xpath ="//div[@class='desktop-bar']//form[@id='searchformdropdown']//input[@id='query_string']")
+	public WebElement searchInput;
+	
+	@FindBy  (xpath = "//div[@class='desktop-bar']//button[@id='searchbutton']")
+	public WebElement searchBtn;
 	
 	public void logout() {
+		BrowserUtils.waitFor(3);
 		Actions action = new Actions(driver);
 		action.moveToElement(profileMenu);
 		action.perform();
 		BrowserUtils.waitForVisibility(logoutLink, 5);
-		logoutLink.click();
+		//logoutLink.click();
 	}
 	
 	public void postNote(String note) {
